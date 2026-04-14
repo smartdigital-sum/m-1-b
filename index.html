@@ -5,1197 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Local Kampur Medical Shop – Your Trusted Pharmacy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        --green: #1a9e5c;
-        --green-dark: #157a48;
-        --green-light: #e6f7ef;
-        --blue: #2563eb;
-        --blue-light: #eff6ff;
-        --teal: #0d9488;
-        --white: #ffffff;
-        --gray-50: #f8fafc;
-        --gray-100: #f1f5f9;
-        --gray-200: #e2e8f0;
-        --gray-400: #94a3b8;
-        --gray-600: #475569;
-        --gray-800: #1e293b;
-        --wa: #25d366;
-        --shadow-sm:
-          0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
-        --shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
-        --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
-        --radius: 16px;
-        --radius-sm: 10px;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        font-family: "Nunito", sans-serif;
-        color: var(--gray-800);
-        background: var(--white);
-        overflow-x: hidden;
-      }
-
-      /* SCROLLBAR */
-      ::-webkit-scrollbar {
-        width: 6px;
-      }
-      ::-webkit-scrollbar-track {
-        background: var(--gray-100);
-      }
-      ::-webkit-scrollbar-thumb {
-        background: var(--green);
-        border-radius: 99px;
-      }
-
-      /* NAV */
-      nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 999;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--gray-200);
-        padding: 0 1.5rem;
-      }
-      .nav-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 68px;
-        gap: 1rem;
-      }
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        text-decoration: none;
-        flex-shrink: 0;
-      }
-      .logo-icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 10px;
-        background: linear-gradient(135deg, var(--green), var(--teal));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-      }
-      .logo-text {
-        font-size: 1.05rem;
-        font-weight: 900;
-        color: var(--gray-800);
-        line-height: 1.1;
-      }
-      .logo-text span {
-        color: var(--green);
-      }
-      .logo-sub {
-        font-size: 0.65rem;
-        font-weight: 600;
-        color: var(--gray-400);
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 0.2rem;
-        list-style: none;
-      }
-      .nav-links a {
-        text-decoration: none;
-        color: var(--gray-600);
-        font-weight: 600;
-        font-size: 0.875rem;
-        padding: 0.4rem 0.75rem;
-        border-radius: 8px;
-        transition: all 0.2s;
-      }
-      .nav-links a:hover {
-        background: var(--green-light);
-        color: var(--green);
-      }
-
-      .nav-actions {
-        display: flex;
-        gap: 0.6rem;
-        align-items: center;
-        flex-shrink: 0;
-      }
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 0.55rem 1.1rem;
-        border-radius: 99px;
-        font-family: "Nunito", sans-serif;
-        font-weight: 700;
-        font-size: 0.85rem;
-        cursor: pointer;
-        text-decoration: none;
-        border: none;
-        transition: all 0.2s;
-        white-space: nowrap;
-      }
-      .btn-call {
-        background: var(--blue-light);
-        color: var(--blue);
-      }
-      .btn-call:hover {
-        background: var(--blue);
-        color: var(--white);
-      }
-      .btn-wa {
-        background: var(--wa);
-        color: var(--white);
-      }
-      .btn-wa:hover {
-        background: #1db954;
-        transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-      }
-
-      .hamburger {
-        display: none;
-        flex-direction: column;
-        gap: 4px;
-        cursor: pointer;
-        padding: 4px;
-      }
-      .hamburger span {
-        width: 22px;
-        height: 2px;
-        background: var(--gray-800);
-        border-radius: 99px;
-        transition: all 0.3s;
-      }
-
-      /* HERO */
-      .hero {
-        min-height: 100vh;
-        background: linear-gradient(
-          135deg,
-          #0f4c35 0%,
-          #1a6b4a 40%,
-          #0d4a5c 100%
-        );
-        display: flex;
-        align-items: center;
-        padding-top: 68px;
-        position: relative;
-        overflow: hidden;
-      }
-      .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      }
-      .hero-blob1 {
-        position: absolute;
-        top: -20%;
-        right: -10%;
-        width: 600px;
-        height: 600px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle,
-          rgba(26, 158, 92, 0.3) 0%,
-          transparent 70%
-        );
-      }
-      .hero-blob2 {
-        position: absolute;
-        bottom: -20%;
-        left: -10%;
-        width: 500px;
-        height: 500px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle,
-          rgba(13, 148, 136, 0.25) 0%,
-          transparent 70%
-        );
-      }
-
-      .hero-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 5rem 1.5rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
-        position: relative;
-        z-index: 1;
-        width: 100%;
-      }
-      .hero-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: var(--white);
-        font-size: 0.8rem;
-        font-weight: 700;
-        padding: 0.4rem 1rem;
-        border-radius: 99px;
-        margin-bottom: 1.5rem;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-      }
-      .badge-dot {
-        width: 8px;
-        height: 8px;
-        background: #4ade80;
-        border-radius: 50%;
-        animation: pulse 2s infinite;
-      }
-      @keyframes pulse {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.4;
-        }
-      }
-
-      .hero h1 {
-        font-family: "Playfair Display", serif;
-        font-size: clamp(2.2rem, 5vw, 3.8rem);
-        color: var(--white);
-        line-height: 1.15;
-        margin-bottom: 1.2rem;
-        font-weight: 800;
-      }
-      .hero h1 span {
-        color: #6ee7b7;
-      }
-      .hero p {
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 1.1rem;
-        line-height: 1.7;
-        margin-bottom: 2rem;
-        max-width: 480px;
-      }
-      .hero-btns {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-      .btn-hero-wa {
-        background: var(--wa);
-        color: var(--white);
-        font-size: 1rem;
-        padding: 0.85rem 2rem;
-        border-radius: 99px;
-        font-weight: 800;
-        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-        transition: all 0.3s;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .btn-hero-wa:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5);
-      }
-      .btn-hero-call {
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(8px);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        color: var(--white);
-        font-size: 1rem;
-        padding: 0.85rem 2rem;
-        border-radius: 99px;
-        font-weight: 800;
-        transition: all 0.3s;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .btn-hero-call:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: translateY(-3px);
-      }
-
-      .hero-stats {
-        display: flex;
-        gap: 2rem;
-        margin-top: 2.5rem;
-      }
-      .stat {
-        color: var(--white);
-      }
-      .stat-num {
-        font-size: 1.8rem;
-        font-weight: 900;
-        font-family: "Playfair Display", serif;
-      }
-      .stat-label {
-        font-size: 0.78rem;
-        color: rgba(255, 255, 255, 0.65);
-        font-weight: 600;
-      }
-
-      /* HERO VISUAL */
-      .hero-visual {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .hero-card {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 24px;
-        padding: 2rem;
-        width: 100%;
-        max-width: 380px;
-      }
-      .hero-card-header {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 1.5rem;
-      }
-      .hero-card-icon {
-        width: 48px;
-        height: 48px;
-        background: var(--green);
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.4rem;
-      }
-      .hero-card-title {
-        color: var(--white);
-        font-weight: 800;
-        font-size: 1rem;
-      }
-      .hero-card-sub {
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 0.8rem;
-      }
-
-      .medicine-list {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-      .med-item {
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 12px;
-        padding: 0.75rem 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .med-name {
-        color: var(--white);
-        font-weight: 700;
-        font-size: 0.875rem;
-      }
-      .med-tag {
-        background: var(--green);
-        color: var(--white);
-        font-size: 0.7rem;
-        font-weight: 700;
-        padding: 0.2rem 0.6rem;
-        border-radius: 99px;
-      }
-      .med-tag.blue {
-        background: rgba(37, 99, 235, 0.8);
-      }
-      .med-tag.teal {
-        background: rgba(13, 148, 136, 0.8);
-      }
-
-      .hero-delivery {
-        margin-top: 1rem;
-        background: rgba(37, 211, 102, 0.15);
-        border: 1px solid rgba(37, 211, 102, 0.3);
-        border-radius: 12px;
-        padding: 0.75rem 1rem;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .hero-delivery span {
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 0.83rem;
-        font-weight: 600;
-      }
-
-      /* SECTION BASE */
-      section {
-        padding: 5rem 1.5rem;
-      }
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      .section-label {
-        display: inline-block;
-        color: var(--green);
-        font-size: 0.78rem;
-        font-weight: 800;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        margin-bottom: 0.75rem;
-      }
-      .section-title {
-        font-family: "Playfair Display", serif;
-        font-size: clamp(1.8rem, 4vw, 2.8rem);
-        font-weight: 800;
-        color: var(--gray-800);
-        margin-bottom: 0.75rem;
-      }
-      .section-sub {
-        color: var(--gray-600);
-        font-size: 1.05rem;
-        max-width: 520px;
-      }
-      .section-head {
-        margin-bottom: 3rem;
-      }
-
-      /* TRUST STRIP */
-      .trust-strip {
-        background: var(--green-light);
-        padding: 1.5rem;
-        border-top: 1px solid rgba(26, 158, 92, 0.1);
-        border-bottom: 1px solid rgba(26, 158, 92, 0.1);
-      }
-      .trust-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-      .trust-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: var(--gray-700);
-      }
-      .trust-icon {
-        font-size: 1.4rem;
-      }
-      .trust-text {
-        font-weight: 700;
-        font-size: 0.9rem;
-      }
-
-      /* SERVICES */
-      .services {
-        background: var(--gray-50);
-      }
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 1.5rem;
-      }
-      .service-card {
-        background: var(--white);
-        border-radius: var(--radius);
-        padding: 2rem;
-        box-shadow: var(--shadow-sm);
-        border: 1px solid var(--gray-200);
-        transition: all 0.3s;
-        cursor: default;
-        position: relative;
-        overflow: hidden;
-      }
-      .service-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, var(--green), var(--teal));
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.3s;
-      }
-      .service-card:hover {
-        transform: translateY(-6px);
-        box-shadow: var(--shadow-lg);
-      }
-      .service-card:hover::before {
-        transform: scaleX(1);
-      }
-
-      .service-icon {
-        width: 56px;
-        height: 56px;
-        border-radius: 14px;
-        background: var(--green-light);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.6rem;
-        margin-bottom: 1.25rem;
-        transition: all 0.3s;
-      }
-      .service-card:hover .service-icon {
-        background: var(--green);
-        transform: scale(1.05);
-      }
-      .service-title {
-        font-weight: 800;
-        font-size: 1.05rem;
-        margin-bottom: 0.5rem;
-        color: var(--gray-800);
-      }
-      .service-desc {
-        color: var(--gray-600);
-        font-size: 0.875rem;
-        line-height: 1.6;
-      }
-
-      /* PRODUCTS */
-      .products-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        gap: 1.5rem;
-      }
-      .product-card {
-        background: var(--white);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow-sm);
-        border: 1px solid var(--gray-200);
-        overflow: hidden;
-        transition: all 0.3s;
-      }
-      .product-card:hover {
-        transform: translateY(-6px);
-        box-shadow: var(--shadow-lg);
-      }
-
-      .product-img {
-        width: 100%;
-        height: 180px;
-        background: var(--gray-100);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 4rem;
-        position: relative;
-        overflow: hidden;
-      }
-      .product-img::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          135deg,
-          rgba(26, 158, 92, 0.08),
-          rgba(13, 148, 136, 0.08)
-        );
-      }
-      .product-badge {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        z-index: 1;
-        background: var(--green);
-        color: var(--white);
-        font-size: 0.7rem;
-        font-weight: 800;
-        padding: 0.2rem 0.65rem;
-        border-radius: 99px;
-      }
-      .product-body {
-        padding: 1.25rem;
-      }
-      .product-name {
-        font-weight: 800;
-        font-size: 1rem;
-        margin-bottom: 0.35rem;
-        color: var(--gray-800);
-      }
-      .product-desc {
-        color: var(--gray-600);
-        font-size: 0.825rem;
-        line-height: 1.5;
-        margin-bottom: 0.85rem;
-      }
-      .product-footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .product-price {
-        font-weight: 900;
-        font-size: 1.1rem;
-        color: var(--green);
-      }
-      .product-price span {
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: var(--gray-400);
-        text-decoration: line-through;
-        margin-left: 4px;
-      }
-      .btn-order {
-        background: var(--green);
-        color: var(--white);
-        font-size: 0.8rem;
-        font-weight: 800;
-        padding: 0.5rem 1.1rem;
-        border-radius: 99px;
-        border: none;
-        cursor: pointer;
-        font-family: "Nunito", sans-serif;
-        transition: all 0.2s;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-      }
-      .btn-order:hover {
-        background: var(--green-dark);
-        transform: scale(1.04);
-      }
-
-      /* HEALTH TIPS */
-      .health-tips {
-        background: var(--gray-50);
-      }
-      .tips-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 1.5rem;
-      }
-      .tip-card {
-        background: var(--white);
-        border-radius: var(--radius);
-        padding: 1.75rem;
-        box-shadow: var(--shadow-sm);
-        border: 1px solid var(--gray-200);
-        transition: all 0.3s;
-      }
-      .tip-card:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow);
-      }
-      .tip-tag {
-        display: inline-block;
-        font-size: 0.72rem;
-        font-weight: 800;
-        padding: 0.22rem 0.75rem;
-        border-radius: 99px;
-        margin-bottom: 0.9rem;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-      }
-      .tag-green {
-        background: var(--green-light);
-        color: var(--green);
-      }
-      .tag-blue {
-        background: var(--blue-light);
-        color: var(--blue);
-      }
-      .tag-teal {
-        background: #f0fdfa;
-        color: var(--teal);
-      }
-      .tip-title {
-        font-weight: 800;
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-        color: var(--gray-800);
-      }
-      .tip-body {
-        color: var(--gray-600);
-        font-size: 0.875rem;
-        line-height: 1.6;
-      }
-
-      /* ABOUT */
-      .about-inner {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
-      }
-      .about-visual {
-        position: relative;
-      }
-      .about-main-card {
-        background: linear-gradient(135deg, var(--green), var(--teal));
-        border-radius: 24px;
-        padding: 3rem;
-        color: var(--white);
-        text-align: center;
-      }
-      .about-emoji {
-        font-size: 5rem;
-        margin-bottom: 1rem;
-      }
-      .about-main-title {
-        font-family: "Playfair Display", serif;
-        font-size: 1.8rem;
-        font-weight: 800;
-        margin-bottom: 0.5rem;
-      }
-      .about-main-sub {
-        opacity: 0.85;
-        font-size: 0.95rem;
-      }
-      .about-float {
-        position: absolute;
-        bottom: -20px;
-        right: -20px;
-        background: var(--white);
-        border-radius: 16px;
-        padding: 1rem 1.5rem;
-        box-shadow: var(--shadow-lg);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .about-float-icon {
-        font-size: 1.5rem;
-      }
-      .about-float-text {
-        font-weight: 800;
-        font-size: 0.875rem;
-        color: var(--gray-800);
-      }
-      .about-float-sub {
-        font-size: 0.75rem;
-        color: var(--gray-400);
-      }
-
-      .about-content p {
-        color: var(--gray-600);
-        line-height: 1.8;
-        margin-bottom: 1.5rem;
-        font-size: 1.025rem;
-      }
-      .about-features {
-        display: flex;
-        flex-direction: column;
-        gap: 0.9rem;
-        margin-bottom: 2rem;
-      }
-      .about-feature {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .feat-check {
-        width: 28px;
-        height: 28px;
-        background: var(--green-light);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.8rem;
-        flex-shrink: 0;
-      }
-      .feat-text {
-        font-weight: 600;
-        color: var(--gray-700);
-      }
-
-      /* CONTACT */
-      .contact {
-        background: linear-gradient(135deg, #0f4c35, #0d4a5c);
-      }
-      .contact-inner {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: start;
-      }
-      .contact .section-label {
-        color: #6ee7b7;
-      }
-      .contact .section-title {
-        color: var(--white);
-      }
-      .contact .section-sub {
-        color: rgba(255, 255, 255, 0.7);
-      }
-
-      .contact-cards {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        margin-top: 2rem;
-      }
-      .contact-card {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 16px;
-        padding: 1.25rem 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        text-decoration: none;
-        transition: all 0.3s;
-      }
-      .contact-card:hover {
-        background: rgba(255, 255, 255, 0.18);
-        transform: translateX(6px);
-      }
-      .contact-card-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.3rem;
-        flex-shrink: 0;
-      }
-      .cc-green {
-        background: rgba(26, 158, 92, 0.4);
-      }
-      .cc-wa {
-        background: rgba(37, 211, 102, 0.3);
-      }
-      .cc-blue {
-        background: rgba(37, 99, 235, 0.3);
-      }
-      .contact-card-text {
-        color: var(--white);
-      }
-      .contact-card-label {
-        font-size: 0.75rem;
-        opacity: 0.65;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
-      .contact-card-value {
-        font-weight: 800;
-        font-size: 1rem;
-      }
-
-      .contact-form-area {
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 24px;
-        padding: 2.5rem;
-      }
-      .form-title {
-        color: var(--white);
-        font-weight: 800;
-        font-size: 1.2rem;
-        margin-bottom: 1.5rem;
-      }
-      .form-group {
-        margin-bottom: 1rem;
-      }
-      .form-group input,
-      .form-group textarea,
-      .form-group select {
-        width: 100%;
-        padding: 0.85rem 1.1rem;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: var(--white);
-        font-family: "Nunito", sans-serif;
-        font-size: 0.9rem;
-        transition: all 0.2s;
-        outline: none;
-      }
-      .form-group input::placeholder,
-      .form-group textarea::placeholder {
-        color: rgba(255, 255, 255, 0.45);
-      }
-      .form-group input:focus,
-      .form-group textarea:focus {
-        border-color: rgba(110, 231, 183, 0.5);
-        background: rgba(255, 255, 255, 0.14);
-      }
-      .form-group textarea {
-        resize: vertical;
-        min-height: 100px;
-      }
-      .form-group select option {
-        color: var(--gray-800);
-      }
-      .btn-submit {
-        width: 100%;
-        background: var(--green);
-        color: var(--white);
-        font-family: "Nunito", sans-serif;
-        font-weight: 800;
-        font-size: 1rem;
-        padding: 1rem;
-        border-radius: 12px;
-        border: none;
-        cursor: pointer;
-        transition: all 0.3s;
-      }
-      .btn-submit:hover {
-        background: var(--green-dark);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(26, 158, 92, 0.4);
-      }
-
-      /* FOOTER */
-      footer {
-        background: var(--gray-800);
-        color: var(--white);
-        padding: 3rem 1.5rem 1.5rem;
-      }
-      .footer-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-        gap: 3rem;
-        margin-bottom: 2.5rem;
-      }
-      .footer-brand .logo {
-        margin-bottom: 1rem;
-        display: flex;
-      }
-      .footer-brand p {
-        color: rgba(255, 255, 255, 0.55);
-        font-size: 0.875rem;
-        line-height: 1.7;
-        max-width: 260px;
-      }
-      .footer-h {
-        font-weight: 800;
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
-        color: rgba(255, 255, 255, 0.9);
-      }
-      .footer-links {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-      .footer-links a {
-        color: rgba(255, 255, 255, 0.55);
-        text-decoration: none;
-        font-size: 0.875rem;
-        font-weight: 600;
-        transition: color 0.2s;
-      }
-      .footer-links a:hover {
-        color: var(--green);
-      }
-      .footer-divider {
-        border: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        margin: 0 0 1.5rem;
-      }
-      .footer-bottom {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-      .footer-copy {
-        color: rgba(255, 255, 255, 0.4);
-        font-size: 0.8rem;
-      }
-      .footer-wa {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        background: var(--wa);
-        color: var(--white);
-        text-decoration: none;
-        padding: 0.45rem 1rem;
-        border-radius: 99px;
-        font-size: 0.82rem;
-        font-weight: 700;
-        transition: all 0.2s;
-      }
-      .footer-wa:hover {
-        background: #1db954;
-      }
-
-      /* FLOATING WA BUTTON */
-      .float-wa {
-        position: fixed;
-        bottom: 1.5rem;
-        right: 1.5rem;
-        z-index: 998;
-        width: 60px;
-        height: 60px;
-        background: var(--wa);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.6rem;
-        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-        text-decoration: none;
-        transition: all 0.3s;
-        animation: floatBounce 3s ease-in-out infinite;
-      }
-      .float-wa:hover {
-        transform: scale(1.1);
-      }
-      @keyframes floatBounce {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-6px);
-        }
-      }
-
-      /* ANIMATIONS */
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .hero-content > * {
-        animation: fadeUp 0.7s ease both;
-      }
-      .hero-content > *:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      .hero-content > *:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .hero-content > *:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-      .hero-content > *:nth-child(4) {
-        animation-delay: 0.4s;
-      }
-      .hero-content > *:nth-child(5) {
-        animation-delay: 0.5s;
-      }
-      .hero-visual {
-        animation: fadeUp 0.8s 0.4s ease both;
-      }
-
-      /* MOBILE NAV */
-      .mobile-nav {
-        display: none;
-        position: fixed;
-        inset: 0;
-        z-index: 998;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(12px);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1.5rem;
-      }
-      .mobile-nav.open {
-        display: flex;
-      }
-      .mobile-nav a {
-        font-size: 1.2rem;
-        font-weight: 800;
-        color: var(--gray-800);
-        text-decoration: none;
-      }
-      .mobile-nav a:hover {
-        color: var(--green);
-      }
-      .mobile-close {
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        font-size: 1.5rem;
-        cursor: pointer;
-        background: none;
-        border: none;
-        color: var(--gray-800);
-      }
-
-      /* RESPONSIVE */
-      @media (max-width: 900px) {
-        .nav-links,
-        .nav-actions .btn-call {
-          display: none;
-        }
-        .hamburger {
-          display: flex;
-        }
-        .hero-inner {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-          padding: 3rem 1.5rem;
-        }
-        .hero-visual {
-          display: none;
-        }
-        .about-inner,
-        .contact-inner {
-          grid-template-columns: 1fr;
-        }
-        .footer-inner {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-      @media (max-width: 600px) {
-        .footer-inner {
-          grid-template-columns: 1fr;
-        }
-        .hero-stats {
-          gap: 1.5rem;
-        }
-        .trust-inner {
-          justify-content: flex-start;
-          gap: 0.75rem;
-        }
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- NAV -->
+
+    <!-- ══ NAV ══════════════════════════════════════════════════ -->
     <nav>
       <div class="nav-inner">
         <a href="#home" class="logo">
@@ -1209,21 +24,15 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#products">Products</a></li>
-          <li><a href="#tips">Health Tips</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav-actions">
           <a href="tel:+919876543210" class="btn btn-call">📞 Call Now</a>
-          <a
-            href="https://wa.me/919876543210"
-            class="btn btn-wa"
-            target="_blank"
-          >
+          <a href="https://wa.me/919876543210" class="btn btn-wa" target="_blank">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
-              />
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
             </svg>
             WhatsApp
           </a>
@@ -1234,24 +43,24 @@
       </div>
     </nav>
 
-    <!-- MOBILE NAV -->
+    <!-- ══ MOBILE NAV ════════════════════════════════════════════ -->
     <div class="mobile-nav" id="mobileNav">
       <button class="mobile-close" onclick="toggleMenu()">✕</button>
-      <a href="#home" onclick="toggleMenu()">Home</a>
-      <a href="#services" onclick="toggleMenu()">Services</a>
-      <a href="#products" onclick="toggleMenu()">Products</a>
-      <a href="#tips" onclick="toggleMenu()">Health Tips</a>
-      <a href="#about" onclick="toggleMenu()">About</a>
-      <a href="#contact" onclick="toggleMenu()">Contact</a>
-      <div style="display: flex; gap: 1rem; margin-top: 1rem">
+      <a href="#home"      onclick="toggleMenu()">Home</a>
+      <a href="#services"  onclick="toggleMenu()">Services</a>
+      <a href="#products"  onclick="toggleMenu()">Products</a>
+      <a href="#tips"      onclick="toggleMenu()">Health Tips</a>
+      <a href="#about"     onclick="toggleMenu()">About</a>
+      <a href="#enquiry"   onclick="toggleMenu()">Medicine Enquiry</a>
+      <a href="#faq"       onclick="toggleMenu()">FAQ</a>
+      <a href="#contact"   onclick="toggleMenu()">Contact</a>
+      <div style="display:flex;gap:1rem;margin-top:1rem">
         <a href="tel:+919876543210" class="btn btn-call">📞 Call</a>
-        <a href="https://wa.me/919876543210" class="btn btn-wa" target="_blank"
-          >💬 WhatsApp</a
-        >
+        <a href="https://wa.me/919876543210" class="btn btn-wa" target="_blank">💬 WhatsApp</a>
       </div>
     </div>
 
-    <!-- HERO -->
+    <!-- ══ HERO ══════════════════════════════════════════════════ -->
     <section class="hero" id="home">
       <div class="hero-blob1"></div>
       <div class="hero-blob2"></div>
@@ -1262,33 +71,15 @@
             Open Now · Serving since 2005
           </div>
           <h1>Your Trusted Medical Store<br /><span>in Kampur</span></h1>
-          <p>
-            Quality medicines, healthcare products, and fast service right in
-            your neighbourhood. We care for your health like family.
-          </p>
+          <p>Quality medicines, healthcare products, and fast service right in your neighbourhood. We care for your health like family.</p>
           <div class="hero-btns">
-            <a
-              href="https://wa.me/919876543210"
-              class="btn-hero-wa"
-              target="_blank"
-            >
-              💬 Order on WhatsApp
-            </a>
-            <a href="tel:+919876543210" class="btn-hero-call"> 📞 Call Now </a>
+            <a href="https://wa.me/919876543210" class="btn-hero-wa" target="_blank">💬 Order on WhatsApp</a>
+            <a href="tel:+919876543210" class="btn-hero-call">📞 Call Now</a>
           </div>
           <div class="hero-stats">
-            <div class="stat">
-              <div class="stat-num">5000+</div>
-              <div class="stat-label">Happy Customers</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">3000+</div>
-              <div class="stat-label">Products</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">18+</div>
-              <div class="stat-label">Years Trusted</div>
-            </div>
+            <div class="stat"><div class="stat-num">5000+</div><div class="stat-label">Happy Customers</div></div>
+            <div class="stat"><div class="stat-num">3000+</div><div class="stat-label">Products</div></div>
+            <div class="stat"><div class="stat-num">18+</div><div class="stat-label">Years Trusted</div></div>
           </div>
         </div>
         <div class="hero-visual">
@@ -1301,410 +92,305 @@
               </div>
             </div>
             <div class="medicine-list">
-              <div class="med-item">
-                <span class="med-name">💊 Prescription Medicines</span>
-                <span class="med-tag">✓ Available</span>
-              </div>
-              <div class="med-item">
-                <span class="med-name">🧴 Personal Care</span>
-                <span class="med-tag blue">✓ Available</span>
-              </div>
-              <div class="med-item">
-                <span class="med-name">👶 Baby Care</span>
-                <span class="med-tag teal">✓ Available</span>
-              </div>
-              <div class="med-item">
-                <span class="med-name">🩺 First Aid</span>
-                <span class="med-tag">✓ Available</span>
-              </div>
-              <div class="med-item">
-                <span class="med-name">💉 Surgical Items</span>
-                <span class="med-tag blue">✓ Available</span>
-              </div>
+              <div class="med-item"><span class="med-name">💊 Prescription Medicines</span><span class="med-tag">✓ In Stock</span></div>
+              <div class="med-item"><span class="med-name">🧴 Personal Care</span><span class="med-tag blue">✓ In Stock</span></div>
+              <div class="med-item"><span class="med-name">👶 Baby Care</span><span class="med-tag teal">✓ In Stock</span></div>
+              <div class="med-item"><span class="med-name">🩺 First Aid</span><span class="med-tag">✓ In Stock</span></div>
+              <div class="med-item"><span class="med-name">💉 Surgical Items</span><span class="med-tag blue">✓ In Stock</span></div>
             </div>
             <div class="hero-delivery">
               <span>🛵</span>
-              <span>Home delivery available in Kampur & nearby areas</span>
+              <span>Home delivery in Kampur &amp; nearby areas</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TRUST STRIP -->
+    <!-- ══ TRUST STRIP ═══════════════════════════════════════════ -->
     <div class="trust-strip">
       <div class="trust-inner">
-        <div class="trust-item">
-          <span class="trust-icon">✅</span
-          ><span class="trust-text">Licensed Pharmacy</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">🕐</span
-          ><span class="trust-text">Open 8AM – 10PM</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">💰</span
-          ><span class="trust-text">Best Local Prices</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">🛵</span
-          ><span class="trust-text">Home Delivery</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">👨‍⚕️</span
-          ><span class="trust-text">Expert Pharmacist</span>
-        </div>
+        <div class="trust-item"><span class="trust-icon">✅</span><span class="trust-text">Licensed Pharmacy</span></div>
+        <div class="trust-item"><span class="trust-icon">🕐</span><span class="trust-text">Open 8AM – 10PM</span></div>
+        <div class="trust-item"><span class="trust-icon">💰</span><span class="trust-text">Best Local Prices</span></div>
+        <div class="trust-item"><span class="trust-icon">🛵</span><span class="trust-text">Home Delivery</span></div>
+        <div class="trust-item"><span class="trust-icon">👨‍⚕️</span><span class="trust-text">Expert Pharmacist</span></div>
+        <div class="trust-item"><span class="trust-icon">💊</span><span class="trust-text">Genuine Medicines</span></div>
       </div>
     </div>
 
-    <!-- SERVICES -->
+    <!-- ══ SERVICES ══════════════════════════════════════════════ -->
     <section class="services" id="services">
       <div class="container">
         <div class="section-head">
           <span class="section-label">What We Offer</span>
           <h2 class="section-title">Our Healthcare Services</h2>
-          <p class="section-sub">
-            Everything you need for your health and wellbeing, all under one
-            roof.
-          </p>
+          <p class="section-sub">Everything you need for your health and wellbeing, all under one roof.</p>
         </div>
         <div class="services-grid">
           <div class="service-card">
             <div class="service-icon">💊</div>
             <h3 class="service-title">Prescription Medicines</h3>
-            <p class="service-desc">
-              All doctor-prescribed medicines available. Our licensed pharmacist
-              ensures you get the right medication with proper guidance.
-            </p>
+            <p class="service-desc">All doctor-prescribed medicines available. Our licensed pharmacist ensures you get the right medication with proper guidance.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">🛒</div>
             <h3 class="service-title">Over-the-Counter Medicines</h3>
-            <p class="service-desc">
-              Common cold, fever, pain relief, antacids and more — no
-              prescription needed. Always in stock for your daily needs.
-            </p>
+            <p class="service-desc">Common cold, fever, pain relief, antacids and more — no prescription needed. Always in stock for your daily needs.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">👶</div>
             <h3 class="service-title">Baby Care Products</h3>
-            <p class="service-desc">
-              Diapers, baby lotions, cerelac, feeding bottles, and infant
-              medicines. Everything for your little one's care.
-            </p>
+            <p class="service-desc">Diapers, baby lotions, cerelac, feeding bottles, and infant medicines. Everything for your little one's care.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">🧴</div>
             <h3 class="service-title">Personal Care</h3>
-            <p class="service-desc">
-              Skincare, hygiene products, vitamins, supplements, and wellness
-              essentials from trusted brands.
-            </p>
+            <p class="service-desc">Skincare, hygiene products, vitamins, supplements, and wellness essentials from trusted brands.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">🩹</div>
             <h3 class="service-title">First Aid Supplies</h3>
-            <p class="service-desc">
-              Bandages, antiseptics, thermometers, BP monitors, glucometers, and
-              essential surgical items.
-            </p>
+            <p class="service-desc">Bandages, antiseptics, thermometers, BP monitors, glucometers, and essential surgical items.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">🛵</div>
             <h3 class="service-title">Home Delivery</h3>
-            <p class="service-desc">
-              Order via WhatsApp and get medicines delivered to your doorstep in
-              Kampur and surrounding areas. Fast and reliable.
-            </p>
+            <p class="service-desc">Order via WhatsApp and get medicines delivered to your doorstep in Kampur and surrounding areas. Fast and reliable.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PRODUCTS -->
+    <!-- ══ PRODUCTS ══════════════════════════════════════════════ -->
     <section id="products">
       <div class="container">
         <div class="section-head">
           <span class="section-label">Popular Products</span>
           <h2 class="section-title">Featured Healthcare Products</h2>
-          <p class="section-sub">
-            Quality products at the best prices. Order instantly via WhatsApp.
-          </p>
+          <p class="section-sub">Quality products at the best prices. Order instantly via WhatsApp.</p>
         </div>
+
+        <!-- Search & Filter -->
+        <div class="product-controls">
+          <div class="search-bar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="productSearch" placeholder="Search medicines or products…" autocomplete="off" />
+          </div>
+          <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">All Products</button>
+            <button class="filter-tab" data-filter="medicines">💊 Medicines</button>
+            <button class="filter-tab" data-filter="baby-care">👶 Baby Care</button>
+            <button class="filter-tab" data-filter="personal-care">🧴 Personal Care</button>
+            <button class="filter-tab" data-filter="first-aid">🩹 First Aid</button>
+            <button class="filter-tab" data-filter="vitamins">💪 Vitamins</button>
+          </div>
+        </div>
+
         <div class="products-grid">
-          <div class="product-card">
-            <div class="product-img">
-              💊
-              <span class="product-badge">Bestseller</span>
-            </div>
+          <div class="product-card" data-cat="medicines">
+            <div class="product-img">💊<span class="product-badge">Bestseller</span></div>
             <div class="product-body">
               <h3 class="product-name">Crocin Advance</h3>
-              <p class="product-desc">
-                Paracetamol 500mg for fever & pain relief. Pack of 15 tablets.
-              </p>
+              <p class="product-desc">Paracetamol 500mg for fever &amp; pain relief. Pack of 15 tablets.</p>
               <div class="product-footer">
                 <div class="product-price">₹32 <span>₹38</span></div>
-                <a
-                  href="https://wa.me/919876543210?text=I want to order Crocin Advance"
-                  class="btn-order"
-                  target="_blank"
-                  >Order 💬</a
-                >
+                <a href="https://wa.me/919876543210?text=I want to order Crocin Advance" class="btn-order" target="_blank">Order 💬</a>
               </div>
             </div>
           </div>
-          <div class="product-card">
-            <div class="product-img">
-              🧴
-              <span class="product-badge">Popular</span>
-            </div>
+          <div class="product-card" data-cat="first-aid">
+            <div class="product-img">🧴<span class="product-badge">Popular</span></div>
             <div class="product-body">
               <h3 class="product-name">Dettol Antiseptic</h3>
-              <p class="product-desc">
-                100ml antiseptic liquid for cuts, wounds and skin disinfection.
-              </p>
+              <p class="product-desc">100ml antiseptic liquid for cuts, wounds and skin disinfection.</p>
               <div class="product-footer">
                 <div class="product-price">₹89 <span>₹95</span></div>
-                <a
-                  href="https://wa.me/919876543210?text=I want to order Dettol Antiseptic"
-                  class="btn-order"
-                  target="_blank"
-                  >Order 💬</a
-                >
+                <a href="https://wa.me/919876543210?text=I want to order Dettol Antiseptic" class="btn-order" target="_blank">Order 💬</a>
               </div>
             </div>
           </div>
-          <div class="product-card">
-            <div class="product-img">
-              👶
-              <span class="product-badge">Baby Care</span>
-            </div>
+          <div class="product-card" data-cat="baby-care">
+            <div class="product-img">👶<span class="product-badge">Baby Care</span></div>
             <div class="product-body">
               <h3 class="product-name">Johnson's Baby Lotion</h3>
-              <p class="product-desc">
-                Gentle, hypoallergenic lotion for soft baby skin. 200ml bottle.
-              </p>
+              <p class="product-desc">Gentle, hypoallergenic lotion for soft baby skin. 200ml bottle.</p>
               <div class="product-footer">
                 <div class="product-price">₹195 <span>₹220</span></div>
-                <a
-                  href="https://wa.me/919876543210?text=I want to order Johnson Baby Lotion"
-                  class="btn-order"
-                  target="_blank"
-                  >Order 💬</a
-                >
+                <a href="https://wa.me/919876543210?text=I want to order Johnsons Baby Lotion" class="btn-order" target="_blank">Order 💬</a>
               </div>
             </div>
           </div>
-          <div class="product-card">
-            <div class="product-img">
-              💉
-              <span class="product-badge">Essentials</span>
-            </div>
+          <div class="product-card" data-cat="first-aid">
+            <div class="product-img">💉<span class="product-badge">Essentials</span></div>
             <div class="product-body">
               <h3 class="product-name">Digital Thermometer</h3>
-              <p class="product-desc">
-                Fast & accurate reading in 10 seconds. Battery included. BIS
-                certified.
-              </p>
+              <p class="product-desc">Fast &amp; accurate reading in 10 seconds. Battery included. BIS certified.</p>
               <div class="product-footer">
                 <div class="product-price">₹149 <span>₹199</span></div>
-                <a
-                  href="https://wa.me/919876543210?text=I want to order Digital Thermometer"
-                  class="btn-order"
-                  target="_blank"
-                  >Order 💬</a
-                >
+                <a href="https://wa.me/919876543210?text=I want to order Digital Thermometer" class="btn-order" target="_blank">Order 💬</a>
               </div>
             </div>
           </div>
-          <div class="product-card">
-            <div class="product-img">
-              🩺
-              <span class="product-badge">Bestseller</span>
-            </div>
+          <div class="product-card" data-cat="medicines">
+            <div class="product-img">🩺<span class="product-badge">Bestseller</span></div>
             <div class="product-body">
               <h3 class="product-name">Volini Pain Relief Spray</h3>
-              <p class="product-desc">
-                Fast relief from joint & muscle pain. 60g spray, perfect for
-                daily use.
-              </p>
+              <p class="product-desc">Fast relief from joint &amp; muscle pain. 60g spray, perfect for daily use.</p>
               <div class="product-footer">
                 <div class="product-price">₹175 <span>₹199</span></div>
-                <a
-                  href="https://wa.me/919876543210?text=I want to order Volini Spray"
-                  class="btn-order"
-                  target="_blank"
-                  >Order 💬</a
-                >
+                <a href="https://wa.me/919876543210?text=I want to order Volini Spray" class="btn-order" target="_blank">Order 💬</a>
               </div>
             </div>
           </div>
-          <div class="product-card">
-            <div class="product-img">
-              🌿
-              <span class="product-badge">Wellness</span>
-            </div>
+          <div class="product-card" data-cat="vitamins">
+            <div class="product-img">🌿<span class="product-badge">Wellness</span></div>
             <div class="product-body">
               <h3 class="product-name">Dabur Chyawanprash</h3>
-              <p class="product-desc">
-                Immunity booster with 40+ herbs. 500g jar for the whole family.
-              </p>
+              <p class="product-desc">Immunity booster with 40+ herbs. 500g jar for the whole family.</p>
               <div class="product-footer">
                 <div class="product-price">₹260 <span>₹295</span></div>
-                <a
-                  href="https://wa.me/919876543210?text=I want to order Dabur Chyawanprash"
-                  class="btn-order"
-                  target="_blank"
-                  >Order 💬</a
-                >
+                <a href="https://wa.me/919876543210?text=I want to order Dabur Chyawanprash" class="btn-order" target="_blank">Order 💬</a>
               </div>
             </div>
           </div>
-          <div class="product-card">
-            <div class="product-img">
-              💆
-              <span class="product-badge">Personal Care</span>
-            </div>
+          <div class="product-card" data-cat="personal-care">
+            <div class="product-img">💆<span class="product-badge">Personal Care</span></div>
             <div class="product-body">
               <h3 class="product-name">Himalaya Face Wash</h3>
-              <p class="product-desc">
-                Neem & turmeric purifying face wash. 150ml for daily cleansing.
-              </p>
+              <p class="product-desc">Neem &amp; turmeric purifying face wash. 150ml for daily cleansing.</p>
               <div class="product-footer">
                 <div class="product-price">₹99 <span>₹120</span></div>
-                <a
-                  href="https://wa.me/919876543210?text=I want to order Himalaya Face Wash"
-                  class="btn-order"
-                  target="_blank"
-                  >Order 💬</a
-                >
+                <a href="https://wa.me/919876543210?text=I want to order Himalaya Face Wash" class="btn-order" target="_blank">Order 💬</a>
               </div>
             </div>
           </div>
-          <div class="product-card">
-            <div class="product-img">
-              💪
-              <span class="product-badge">Vitamins</span>
-            </div>
+          <div class="product-card" data-cat="vitamins">
+            <div class="product-img">💪<span class="product-badge">Vitamins</span></div>
             <div class="product-body">
               <h3 class="product-name">Shelcal 500 – Calcium</h3>
-              <p class="product-desc">
-                Calcium & Vitamin D3 tablets for bone health. Pack of 30
-                tablets.
-              </p>
+              <p class="product-desc">Calcium &amp; Vitamin D3 tablets for bone health. Pack of 30 tablets.</p>
               <div class="product-footer">
                 <div class="product-price">₹142 <span>₹160</span></div>
-                <a
-                  href="https://wa.me/919876543210?text=I want to order Shelcal 500"
-                  class="btn-order"
-                  target="_blank"
-                  >Order 💬</a
-                >
+                <a href="https://wa.me/919876543210?text=I want to order Shelcal 500" class="btn-order" target="_blank">Order 💬</a>
               </div>
             </div>
           </div>
+
+          <!-- No results message -->
+          <div id="noResults" class="no-results">No products found. Try a different search or category.</div>
         </div>
-        <div style="text-align: center; margin-top: 3rem">
-          <a
-            href="https://wa.me/919876543210?text=Please share your full product catalogue"
-            target="_blank"
-            class="btn btn-wa"
-            style="
-              font-size: 1rem;
-              padding: 0.85rem 2.5rem;
-              border-radius: 99px;
-            "
-          >
+
+        <div style="text-align:center;margin-top:3rem">
+          <a href="https://wa.me/919876543210?text=Please share your full product catalogue" target="_blank" class="btn btn-wa" style="font-size:1rem;padding:.85rem 2.5rem;border-radius:99px">
             💬 Ask for Full Catalogue on WhatsApp
           </a>
         </div>
       </div>
     </section>
 
-    <!-- HEALTH TIPS -->
+    <!-- ══ HEALTH TIPS ════════════════════════════════════════════ -->
     <section class="health-tips" id="tips">
       <div class="container">
         <div class="section-head">
           <span class="section-label">Health Tips</span>
           <h2 class="section-title">Stay Healthy, Stay Happy</h2>
-          <p class="section-sub">
-            Simple tips from our pharmacist to keep you and your family healthy.
-          </p>
+          <p class="section-sub">Simple tips from our pharmacist to keep you and your family healthy.</p>
         </div>
         <div class="tips-grid">
           <div class="tip-card">
             <span class="tip-tag tag-green">💧 Hydration</span>
             <h3 class="tip-title">Drink 8 Glasses of Water Daily</h3>
-            <p class="tip-body">
-              Staying hydrated improves digestion, skin health, and energy
-              levels. Start each morning with a glass of warm water to kickstart
-              your metabolism.
-            </p>
+            <p class="tip-body">Staying hydrated improves digestion, skin health, and energy levels. Start each morning with a glass of warm water to kickstart your metabolism.</p>
           </div>
           <div class="tip-card">
             <span class="tip-tag tag-blue">💊 Medicine Safety</span>
             <h3 class="tip-title">Always Complete Your Antibiotic Course</h3>
-            <p class="tip-body">
-              Never stop antibiotics midway even if you feel better. Incomplete
-              courses lead to antibiotic resistance. Consult your pharmacist for
-              guidance.
-            </p>
+            <p class="tip-body">Never stop antibiotics midway even if you feel better. Incomplete courses lead to antibiotic resistance. Consult your pharmacist for guidance.</p>
           </div>
           <div class="tip-card">
             <span class="tip-tag tag-teal">🌡️ Fever Care</span>
             <h3 class="tip-title">When to Worry About Fever</h3>
-            <p class="tip-body">
-              A fever above 103°F (39.4°C), or any fever in children under 3
-              months, needs immediate medical attention. Paracetamol helps mild
-              fevers.
-            </p>
+            <p class="tip-body">A fever above 103°F (39.4°C), or any fever in children under 3 months, needs immediate medical attention. Paracetamol helps mild fevers.</p>
           </div>
           <div class="tip-card">
             <span class="tip-tag tag-green">🩸 Diabetes</span>
             <h3 class="tip-title">Monitor Blood Sugar Regularly</h3>
-            <p class="tip-body">
-              Diabetic patients should check blood sugar levels daily. We offer
-              Glucometers and test strips at affordable prices. Consistency is
-              key.
-            </p>
+            <p class="tip-body">Diabetic patients should check blood sugar levels daily. We offer Glucometers and test strips at affordable prices. Consistency is key.</p>
           </div>
           <div class="tip-card">
             <span class="tip-tag tag-blue">👶 Baby Health</span>
             <h3 class="tip-title">Keep Vaccinations Up to Date</h3>
-            <p class="tip-body">
-              Follow the immunisation schedule for your child. Keep a
-              vaccination card safely. Ask us about vitamin drops and
-              supplements for growing babies.
-            </p>
+            <p class="tip-body">Follow the immunisation schedule for your child. Keep a vaccination card safely. Ask us about vitamin drops and supplements for growing babies.</p>
           </div>
           <div class="tip-card">
             <span class="tip-tag tag-teal">❤️ Heart Health</span>
             <h3 class="tip-title">Check Your Blood Pressure Monthly</h3>
-            <p class="tip-body">
-              High BP often has no symptoms. Visit us for a free BP check. We
-              stock BP monitors and BP medicines at the best prices in Kampur.
-            </p>
+            <p class="tip-body">High BP often has no symptoms. Visit us for a free BP check. We stock BP monitors and BP medicines at the best prices in Kampur.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about">
+    <!-- ══ TESTIMONIALS ════════════════════════════════════════ -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Customer Reviews</span>
+          <h2 class="section-title">What Our Customers Say</h2>
+          <p class="section-sub">Real feedback from families and patients who trust us every day.</p>
+        </div>
+        <div class="testi-grid">
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">"Best medical shop in Kampur! They always have the medicines my mother needs and the staff explains everything patiently. Home delivery is very fast too."</p>
+            <div class="testi-author">
+              <div class="testi-avatar">👩</div>
+              <div><div class="testi-name">Priya Devi</div><div class="testi-loc">Kampur, Nagaon</div></div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">"I have been ordering medicines on WhatsApp for 2 years. Very convenient and they always confirm before delivery. Prices are much better than other shops."</p>
+            <div class="testi-author">
+              <div class="testi-avatar">👨</div>
+              <div><div class="testi-name">Ranjit Bora</div><div class="testi-loc">Chaparmukh, Assam</div></div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">"The pharmacist here is very knowledgeable. He helped me understand my diabetic medicines properly. The shop is always clean and well-stocked."</p>
+            <div class="testi-author">
+              <div class="testi-avatar">👴</div>
+              <div><div class="testi-name">Dinesh Kalita</div><div class="testi-loc">Kampur Town</div></div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★☆</div>
+            <p class="testi-text">"Good collection of baby products and they gave me proper guidance for my newborn's medicines. Very trustworthy and reasonably priced."</p>
+            <div class="testi-author">
+              <div class="testi-avatar">👩</div>
+              <div><div class="testi-name">Anita Gogoi</div><div class="testi-loc">Raha, Nagaon</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ ABOUT ══════════════════════════════════════════════════ -->
+    <section class="about-section" id="about">
       <div class="container">
         <div class="about-inner">
           <div class="about-visual">
             <div class="about-main-card">
               <div class="about-emoji">🏥</div>
               <div class="about-main-title">Local Kampur Medical Shop</div>
-              <div class="about-main-sub">
-                Kampur's most trusted pharmacy since 2005
-              </div>
+              <div class="about-main-sub">Kampur's most trusted pharmacy since 2005</div>
             </div>
             <div class="about-float">
               <div class="about-float-icon">⭐</div>
               <div>
-                <div class="about-float-text">4.9/5 Rating</div>
+                <div class="about-float-text">4.9 / 5 Rating</div>
                 <div class="about-float-sub">From 500+ customers</div>
               </div>
             </div>
@@ -1712,74 +398,74 @@
           <div class="about-content">
             <span class="section-label">About Us</span>
             <h2 class="section-title">Your Local Pharmacy, Your Family</h2>
-            <p>
-              For over 18 years, Local Kampur Medical Shop has been serving the
-              Kampur community with genuine medicines, honest advice, and a warm
-              smile. We are a licensed pharmacy staffed by trained pharmacists
-              who genuinely care about your health.
-            </p>
-            <p>
-              From the moment you walk in, you feel the difference — real
-              guidance, quality products, and prices that respect your budget.
-              We believe healthcare should be accessible to everyone.
-            </p>
+            <p>For over 18 years, Local Kampur Medical Shop has been serving the Kampur community with genuine medicines, honest advice, and a warm smile. We are a licensed pharmacy staffed by trained pharmacists who genuinely care about your health.</p>
+            <p>From the moment you walk in, you feel the difference — real guidance, quality products, and prices that respect your budget. We believe healthcare should be accessible to everyone in Kampur and Nagaon district.</p>
             <div class="about-features">
-              <div class="about-feature">
-                <div class="feat-check">✓</div>
-                <span class="feat-text">Licensed & Certified Pharmacy</span>
-              </div>
-              <div class="about-feature">
-                <div class="feat-check">✓</div>
-                <span class="feat-text"
-                  >Genuine medicines from authorised distributors</span
-                >
-              </div>
-              <div class="about-feature">
-                <div class="feat-check">✓</div>
-                <span class="feat-text"
-                  >Qualified pharmacist available in-store</span
-                >
-              </div>
-              <div class="about-feature">
-                <div class="feat-check">✓</div>
-                <span class="feat-text"
-                  >Affordable prices & senior citizen discounts</span
-                >
-              </div>
-              <div class="about-feature">
-                <div class="feat-check">✓</div>
-                <span class="feat-text">Home delivery across Kampur area</span>
-              </div>
-              <div class="about-feature">
-                <div class="feat-check">✓</div>
-                <span class="feat-text"
-                  >Easy WhatsApp ordering — just send a message!</span
-                >
-              </div>
+              <div class="about-feature"><div class="feat-check">✓</div><span class="feat-text">Licensed &amp; Certified Pharmacy — Reg. No. PH/AS/KMP/0542</span></div>
+              <div class="about-feature"><div class="feat-check">✓</div><span class="feat-text">Genuine medicines from authorised distributors only</span></div>
+              <div class="about-feature"><div class="feat-check">✓</div><span class="feat-text">Qualified B.Pharm pharmacist available in-store daily</span></div>
+              <div class="about-feature"><div class="feat-check">✓</div><span class="feat-text">Affordable prices &amp; senior citizen discounts available</span></div>
+              <div class="about-feature"><div class="feat-check">✓</div><span class="feat-text">Home delivery across Kampur, Chaparmukh &amp; Raha area</span></div>
+              <div class="about-feature"><div class="feat-check">✓</div><span class="feat-text">Easy WhatsApp ordering — just send a message!</span></div>
             </div>
-            <a
-              href="https://wa.me/919876543210"
-              class="btn btn-wa"
-              style="font-size: 1rem; padding: 0.75rem 2rem"
-              target="_blank"
-              >💬 Chat with Us</a
-            >
+            <a href="https://wa.me/919876543210" class="btn btn-wa" style="font-size:1rem;padding:.75rem 2rem" target="_blank">💬 Chat with Us</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
+    <!-- ══ MEDICINE AVAILABILITY ENQUIRY ═════════════════════════ -->
+    <section class="enquiry-section" id="enquiry">
+      <div class="container">
+        <div class="enquiry-inner">
+          <div class="enquiry-content">
+            <span class="section-label">Medicine Enquiry</span>
+            <h2 class="section-title">Check If Your Medicine Is Available</h2>
+            <p class="section-sub">Not sure if we stock a specific medicine? Send us a quick enquiry and we'll confirm availability and price on WhatsApp within minutes.</p>
+            <div class="enquiry-steps">
+              <div class="enq-step">
+                <div class="enq-step-num">1</div>
+                <div class="enq-step-text">Enter the medicine name and your phone number in the form.</div>
+              </div>
+              <div class="enq-step">
+                <div class="enq-step-num">2</div>
+                <div class="enq-step-text">Click "Check on WhatsApp" — it opens your WhatsApp with the message ready.</div>
+              </div>
+              <div class="enq-step">
+                <div class="enq-step-num">3</div>
+                <div class="enq-step-text">We confirm availability, price, and delivery options within minutes.</div>
+              </div>
+            </div>
+          </div>
+          <div class="enquiry-form-card">
+            <div class="form-title">💊 Medicine Availability Enquiry</div>
+            <div class="enq-group">
+              <label for="enqMed">Medicine / Product Name *</label>
+              <input type="text" id="enqMed" placeholder="e.g. Metformin 500mg, Crocin Advance…" autocomplete="off" />
+            </div>
+            <div class="enq-group">
+              <label for="enqPhone">Your Phone Number *</label>
+              <input type="tel" id="enqPhone" placeholder="10-digit mobile number" maxlength="10" />
+            </div>
+            <div class="enq-group">
+              <label for="enqNote">Additional Notes (optional)</label>
+              <textarea id="enqNote" placeholder="e.g. quantity needed, preferred brand, delivery address…"></textarea>
+            </div>
+            <button class="btn-enq" onclick="sendEnquiry()">💬 Check on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CONTACT ════════════════════════════════════════════════ -->
+    <section class="contact-section" id="contact">
       <div class="container">
         <div class="contact-inner">
+          <!-- Left: contact info + hours -->
           <div>
             <span class="section-label">Get In Touch</span>
             <h2 class="section-title">We're Here to Help</h2>
-            <p class="section-sub">
-              Reach out for orders, queries, or any health advice. We respond
-              quickly!
-            </p>
+            <p class="section-sub">Reach out for orders, queries, or any health advice. We respond quickly on WhatsApp!</p>
             <div class="contact-cards">
               <a href="tel:+919876543210" class="contact-card">
                 <div class="contact-card-icon cc-green">📞</div>
@@ -1788,11 +474,7 @@
                   <div class="contact-card-value">+91 98765 43210</div>
                 </div>
               </a>
-              <a
-                href="https://wa.me/919876543210"
-                class="contact-card"
-                target="_blank"
-              >
+              <a href="https://wa.me/919876543210" class="contact-card" target="_blank">
                 <div class="contact-card-icon cc-wa">💬</div>
                 <div class="contact-card-text">
                   <div class="contact-card-label">WhatsApp Order</div>
@@ -1803,32 +485,37 @@
                 <div class="contact-card-icon cc-blue">📍</div>
                 <div class="contact-card-text">
                   <div class="contact-card-label">Visit Us</div>
-                  <div class="contact-card-value">
-                    Main Market, Kampur, Assam
-                  </div>
-                </div>
-              </div>
-              <div class="contact-card">
-                <div class="contact-card-icon cc-green">🕐</div>
-                <div class="contact-card-text">
-                  <div class="contact-card-label">Working Hours</div>
-                  <div class="contact-card-value">
-                    Mon–Sun: 8:00 AM – 10:00 PM
-                  </div>
+                  <div class="contact-card-value">Main Market, Kampur, Nagaon, Assam – 782413</div>
                 </div>
               </div>
             </div>
+
+            <!-- Business Hours -->
+            <p class="hours-label">Business Hours</p>
+            <table class="hours-table">
+              <tr><td>Monday – Friday</td><td>8:00 AM – 10:00 PM</td></tr>
+              <tr><td>Saturday</td><td>8:00 AM – 10:00 PM</td></tr>
+              <tr><td>Sunday</td><td>9:00 AM – 8:00 PM</td></tr>
+              <tr><td>Public Holidays</td><td>9:00 AM – 6:00 PM</td></tr>
+            </table>
           </div>
+
+          <!-- Right: contact form -->
           <div class="contact-form-area">
             <div class="form-title">📩 Send Us a Message</div>
             <div class="form-group">
-              <input type="text" placeholder="Your Name" />
+              <label for="ctName">Your Name</label>
+              <input type="text" id="ctName" placeholder="Full name" />
+              <div class="field-error">Please enter your name.</div>
             </div>
             <div class="form-group">
-              <input type="tel" placeholder="Your Phone Number" />
+              <label for="ctPhone">Phone Number</label>
+              <input type="tel" id="ctPhone" placeholder="10-digit mobile number" maxlength="10" />
+              <div class="field-error">Enter a valid 10-digit mobile number.</div>
             </div>
             <div class="form-group">
-              <select>
+              <label for="ctType">Query Type</label>
+              <select id="ctType">
                 <option value="" disabled selected>Select Query Type</option>
                 <option>Medicine Availability</option>
                 <option>Home Delivery</option>
@@ -1836,37 +523,91 @@
                 <option>Health Advice</option>
                 <option>Other</option>
               </select>
+              <div class="field-error">Please select a query type.</div>
             </div>
             <div class="form-group">
-              <textarea
-                placeholder="Your message or medicine name..."
-              ></textarea>
+              <label for="ctMsg">Your Message</label>
+              <textarea id="ctMsg" placeholder="Your message or medicine name…"></textarea>
+              <div class="field-error">Please enter your message.</div>
             </div>
-            <button class="btn-submit" onclick="sendWA()">
-              💬 Send via WhatsApp
-            </button>
+            <button class="btn-submit" onclick="sendWA()">💬 Send via WhatsApp</button>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="map-wrap">
+          <iframe
+            src="https://maps.google.com/maps?q=Kampur,+Nagaon,+Assam,+India&z=14&output=embed"
+            width="100%"
+            height="320"
+            style="border:0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Kampur Medical Shop Location"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FAQ ════════════════════════════════════════════════════ -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="faq-inner">
+          <div>
+            <span class="section-label">FAQ</span>
+            <h2 class="section-title">Common Questions</h2>
+            <p class="section-sub">Quick answers to questions we hear every day from our customers.</p>
+            <a href="https://wa.me/919876543210?text=I have a question about Kampur Medical" class="btn btn-wa" style="margin-top:2rem;font-size:.9rem;padding:.7rem 1.5rem" target="_blank">
+              💬 Ask on WhatsApp
+            </a>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-q">Do you deliver medicines at home?<span class="faq-chevron">▼</span></button>
+              <div class="faq-a">Yes! We offer home delivery within Kampur, Chaparmukh, Raha, and surrounding areas. Simply WhatsApp us your order and address at +91 98765 43210 and we will arrange delivery as soon as possible.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q">Do I need a prescription to buy medicines?<span class="faq-chevron">▼</span></button>
+              <div class="faq-a">Over-the-counter medicines like paracetamol, antacids, and cough syrups do not require a prescription. For prescription-only medicines (antibiotics, BP medicines, diabetes drugs, etc.) we require a valid doctor's prescription as per Indian pharmacy law.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q">How do I order medicines on WhatsApp?<span class="faq-chevron">▼</span></button>
+              <div class="faq-a">Simply send us a message on WhatsApp at +91 98765 43210 with your medicine name, quantity, and delivery address. We will confirm availability and price and arrange delivery or in-store pickup.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q">Are the medicines genuine and certified?<span class="faq-chevron">▼</span></button>
+              <div class="faq-a">Absolutely. We are a licensed pharmacy (Reg. No. PH/AS/KMP/0542) and source all medicines from authorised distributors and manufacturers only. We do not stock duplicate or expired medicines.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q">Do you offer discounts for senior citizens?<span class="faq-chevron">▼</span></button>
+              <div class="faq-a">Yes, we offer special discounts for senior citizens (60+) on most generic and branded medicines. Please mention it when you visit or order and our staff will apply the applicable discount.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q">What if a medicine is out of stock?<span class="faq-chevron">▼</span></button>
+              <div class="faq-a">If a medicine is not in stock, we can usually arrange it within 24 hours from our distributors. You can also use our Medicine Availability Enquiry form above and we will confirm stock and arrange supply.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q">Do you accept UPI or card payments?<span class="faq-chevron">▼</span></button>
+              <div class="faq-a">Yes, we accept cash, UPI (Google Pay, PhonePe, Paytm), and debit/credit cards. For home delivery orders, payment is collected at the time of delivery.</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ══ FOOTER ══════════════════════════════════════════════════ -->
     <footer>
       <div class="footer-inner">
         <div class="footer-brand">
-          <a href="#home" class="logo" style="margin-bottom: 1rem">
+          <a href="#home" class="logo" style="margin-bottom:1rem">
             <div class="logo-icon">💊</div>
             <div>
-              <div class="logo-text" style="color: #fff">
-                Kampur <span>Medical</span>
-              </div>
+              <div class="logo-text" style="color:#fff">Kampur <span>Medical</span></div>
               <div class="logo-sub">Your Trusted Pharmacy</div>
             </div>
           </a>
-          <p>
-            Serving the Kampur community with genuine medicines, quality
-            healthcare products and honest advice since 2005.
-          </p>
+          <p>Serving the Kampur community with genuine medicines, quality healthcare products and honest advice since 2005.</p>
         </div>
         <div>
           <div class="footer-h">Quick Links</div>
@@ -1875,96 +616,61 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#products">Products</a></li>
             <li><a href="#tips">Health Tips</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
             <li><a href="#about">About Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
         <div>
           <div class="footer-h">Services</div>
           <ul class="footer-links">
-            <li><a href="#">Prescription Medicines</a></li>
-            <li><a href="#">OTC Medicines</a></li>
-            <li><a href="#">Baby Care</a></li>
-            <li><a href="#">First Aid</a></li>
-            <li><a href="#">Home Delivery</a></li>
+            <li><a href="#services">Prescription Medicines</a></li>
+            <li><a href="#services">OTC Medicines</a></li>
+            <li><a href="#services">Baby Care</a></li>
+            <li><a href="#services">First Aid</a></li>
+            <li><a href="#services">Home Delivery</a></li>
+            <li><a href="#enquiry">Medicine Enquiry</a></li>
           </ul>
         </div>
         <div>
           <div class="footer-h">Contact</div>
           <ul class="footer-links">
             <li><a href="tel:+919876543210">📞 +91 98765 43210</a></li>
-            <li>
-              <a href="https://wa.me/919876543210" target="_blank"
-                >💬 WhatsApp Order</a
-              >
-            </li>
-            <li><a href="#">📍 Main Market, Kampur</a></li>
-            <li><a href="#">🕐 8AM – 10PM Daily</a></li>
+            <li><a href="https://wa.me/919876543210" target="_blank">💬 WhatsApp Order</a></li>
+            <li><a href="#contact">📍 Main Market, Kampur</a></li>
+            <li><a href="#contact">🕐 Mon–Sat: 8AM – 10PM</a></li>
+            <li><a href="#contact">🗺 View on Map</a></li>
           </ul>
         </div>
       </div>
       <hr class="footer-divider" />
       <div class="footer-bottom">
-        <div class="footer-copy">
-          © 2025 Local Kampur Medical Shop. All rights reserved. Licensed
-          Pharmacy.
-        </div>
-        <a href="https://wa.me/919876543210" class="footer-wa" target="_blank">
-          💬 Order on WhatsApp
-        </a>
+        <div class="footer-copy">© 2025 Local Kampur Medical Shop. All rights reserved. Licensed Pharmacy — Reg. No. PH/AS/KMP/0542</div>
+        <a href="https://wa.me/919876543210" class="footer-wa" target="_blank">💬 Order on WhatsApp</a>
       </div>
     </footer>
 
-    <!-- FLOATING WA -->
-    <a
-      href="https://wa.me/919876543210"
-      class="float-wa"
-      target="_blank"
-      title="Order on WhatsApp"
-    >
+    <!-- ══ FLOATING WHATSAPP ══════════════════════════════════════ -->
+    <a href="https://wa.me/919876543210" class="float-wa" target="_blank" title="Order on WhatsApp">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-        <path
-          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
-        />
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
       </svg>
     </a>
 
-    <script>
-      function toggleMenu() {
-        document.getElementById("mobileNav").classList.toggle("open");
-      }
-      function sendWA() {
-        const name = document.querySelector(
-          'input[placeholder="Your Name"]',
-        ).value;
-        const phone = document.querySelector(
-          'input[placeholder="Your Phone Number"]',
-        ).value;
-        const msg = document.querySelector("textarea").value;
-        const text = `Hello! I'm ${name || "a customer"} (${phone || ""}). ${msg || "I have a query."}`;
-        window.open(
-          `https://wa.me/919876543210?text=${encodeURIComponent(text)}`,
-          "_blank",
-        );
-      }
+    <!-- ══ CONFIRMATION MODAL ══════════════════════════════════════ -->
+    <div class="modal-overlay" id="confirmModal">
+      <div class="modal">
+        <div class="modal-icon">💬</div>
+        <div class="modal-title">Ready to Send?</div>
+        <p class="modal-sub">Review your message below before we open WhatsApp for you.</p>
+        <div class="modal-preview" id="modalPreview"></div>
+        <div class="modal-btns">
+          <button class="btn-confirm" onclick="confirmSend()">✓ Send on WhatsApp</button>
+          <button class="btn-cancel"  onclick="closeModal()">✕ Edit Message</button>
+        </div>
+      </div>
+    </div>
 
-      // Smooth nav active state
-      const sections = document.querySelectorAll("section[id]");
-      const navLinks = document.querySelectorAll(".nav-links a");
-      window.addEventListener("scroll", () => {
-        let current = "";
-        sections.forEach((s) => {
-          if (window.scrollY >= s.offsetTop - 100)
-            current = s.getAttribute("id");
-        });
-        navLinks.forEach((a) => {
-          a.style.background =
-            a.getAttribute("href") === "#" + current
-              ? "var(--green-light)"
-              : "";
-          a.style.color =
-            a.getAttribute("href") === "#" + current ? "var(--green)" : "";
-        });
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
